@@ -360,6 +360,10 @@
     margin-inline: auto;
   }
 
+  .hero-image::before {
+    display: none; /* Hide background accent on mobile to avoid overflow and simplify layout */
+  }
+
   .hero h1 {
     font-size: var(--text-3xl);
   }
@@ -404,9 +408,17 @@
   flex-shrink: 0;
 }
 
+.card:not(.card-wide) .card-icon {
+  margin-inline: auto;
+}
+
 .card h3 {
   margin-bottom: var(--space-4);
   color: var(--color-text-dark);
+}
+
+.card:not(.card-wide) h3 {
+  text-align: center;
 }
 
 .card-list {
