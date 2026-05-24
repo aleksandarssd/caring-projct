@@ -1117,3 +1117,107 @@
     padding: 0 var(--space-6) var(--space-6);
   }
 }
+
+/* ============================================================
+   COOKIE CONSENT MODAL
+   ============================================================ */
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cookie-modal {
+  background-color: var(--color-surface);
+  width: 100%;
+  max-width: 600px;
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.cookie-modal h2 {
+  text-align: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-dark);
+}
+
+.cookie-modal p {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin-bottom: var(--space-4);
+}
+
+.cookie-modal p a {
+  color: var(--color-green-dark);
+  text-decoration: underline;
+}
+
+.cookie-modal .cookie-muted {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.cookie-buttons {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.cookie-buttons .btn {
+  background-color: var(--color-green-dark);
+  border-color: var(--color-green-dark);
+  color: var(--color-text-inv);
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-buttons .btn:hover {
+  background-color: var(--color-green-mid);
+  border-color: var(--color-green-mid);
+}
+
+.cookie-secondary-link {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.cookie-secondary-link a {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  text-decoration: underline;
+}
+
+.cookie-footer-links {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.cookie-footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.cookie-footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .cookie-modal {
+    padding: var(--space-6);
+  }
+}
