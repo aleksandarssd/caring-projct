@@ -268,7 +268,7 @@
   text-align: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .nav-links,
   .nav-cta {
     display: none;
