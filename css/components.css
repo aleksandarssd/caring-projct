@@ -303,10 +303,13 @@
   gap: var(--space-6);
 }
 
-.hero h1 {
+.hero h1,
+.hero-subheadline {
   font-size: var(--text-4xl);
   line-height: var(--lh-snug);
   color: var(--color-text-dark);
+  font-family: var(--font-serif);
+  font-weight: var(--fw-bold);
 }
 
 .hero-body {

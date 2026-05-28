@@ -209,49 +209,202 @@
 }
 
 /* ============================================================
-   JOBS PAGE — Extra Styles
+   JOBS PAGE — Refined Styles
    ============================================================ */
-.jobs-content {
-  max-width: 800px;
+
+/* ── Page Hero adjustments for jobs page ── */
+.page-hero-sub {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 54ch;
   margin-inline: auto;
-  padding-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
-.jobs-columns {
+.page-hero-img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* ── Emotional Anchor Box ── */
+.jobs-anchor-section {
+  padding-block: var(--space-16);
+}
+
+.jobs-anchor-box {
+  background: linear-gradient(135deg, var(--color-green-xlight) 0%, #e8f4ed 100%);
+  border: 1.5px solid var(--color-green-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-10);
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.jobs-anchor-box::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, var(--color-green-light) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.jobs-anchor-ornament {
+  font-size: 1.4rem;
+  color: var(--color-green-mid);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+.jobs-anchor-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: var(--fw-bold);
+  color: var(--color-green-dark);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-4);
+}
+
+.jobs-anchor-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 46ch;
+  margin-inline: auto;
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Ihre Aufgabe — Task Cards ── */
+.jobs-aufgabe-wrap {
+  max-width: 880px;
+  margin-inline: auto;
+}
+
+.jobs-tasks-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  margin-bottom: var(--space-12);
+  gap: var(--space-6);
 }
 
-.jobs-column h3 {
-  margin-bottom: var(--space-5);
-  color: var(--color-text-dark);
+.jobs-task-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  text-align: center;
 }
 
-.jobs-list {
+.jobs-task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.jobs-task-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+  line-height: 1;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+  justify-content: center;
 }
 
-.jobs-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
+.jobs-task-card h3 {
   font-size: var(--text-base);
-  color: var(--color-text-body);
-  line-height: var(--lh-normal);
+  font-weight: var(--fw-semi);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
 }
 
-.jobs-list li .icon {
-  flex-shrink: 0;
-  color: var(--color-green-dark);
-  margin-top: 2px;
+.jobs-task-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin: 0;
 }
 
+/* ── Was Sie bei uns erwartet — Benefit Cards ── */
+.jobs-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.jobs-benefit-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  text-align: center;
+}
+
+.jobs-benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.jobs-benefit-icon {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.jobs-benefit-card h3 {
+  font-size: var(--text-base);
+  font-weight: var(--fw-semi);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+}
+
+.jobs-benefit-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+}
+
+/* ── Form label optional tag ── */
+.form-label-opt {
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  margin-left: var(--space-1);
+}
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .jobs-columns {
+  .jobs-tasks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jobs-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .jobs-anchor-box {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .jobs-benefits-grid {
     grid-template-columns: 1fr;
   }
 }
