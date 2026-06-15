@@ -153,7 +153,7 @@
           <div class="jobs-benefit-card">
             <div class="jobs-benefit-icon" aria-hidden="true">💶</div>
             <h3>Faire Vergütung</h3>
-            <p>Ein angemessenes Gehalt, das Ihrer Zeit und Ihrem Einsatz gerecht wird.</p>
+            <p>Überdurchschnittlicher Stundenlohn plus zusätzliche Anerkennungszahlung</p>
           </div>
 
           <div class="jobs-benefit-card">
@@ -190,13 +190,46 @@
       </div>
     </section>
 
+    <!-- WAS UNS WICHTIG IST -->
+    <section class="section container">
+      <div class="jobs-aufgabe-wrap">
+        <div class="section-header centered">
+          <h2>Was uns wichtig ist</h2>
+        </div>
+
+        <div class="jobs-values-grid">
+
+          <div class="jobs-value-card">
+            <div class="jobs-value-icon" aria-hidden="true">💛</div>
+            <p>Menschlichkeit und Verlässlichkeit</p>
+          </div>
+
+          <div class="jobs-value-card">
+            <div class="jobs-value-icon" aria-hidden="true">😊</div>
+            <p>Freude am Umgang mit älteren Menschen</p>
+          </div>
+
+          <div class="jobs-value-card">
+            <div class="jobs-value-icon" aria-hidden="true">🛡️</div>
+            <p>Verantwortungsbewusstsein</p>
+          </div>
+
+          <div class="jobs-value-card">
+            <div class="jobs-value-icon" aria-hidden="true">📋</div>
+            <p>Bereitschaft zur Qualifizierung nach AnFöVO NRW (Basisschulung für Hauswirtschaft- und Betreuungskräfte)</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT / APPLICATION FORM -->
     <section class="section form-section container">
 
       <div class="form-wrapper">
         <div class="section-header centered mb-8">
           <h2>Klingt das nach Ihnen?</h2>
-          <p class="section-subtitle">Schreiben Sie uns einfach. Kein Lebenslauf nötig, keine Bewerbungsmappe – nur ein kurzes Hallo.</p>
+          <p class="section-subtitle">Schreiben Sie uns einfach. Dann bewerben Sie sich gerne</p>
         </div>
 
         <form class="validate-form" novalidate>
@@ -223,6 +256,19 @@
             <div class="form-group form-group--full">
               <label for="message" class="form-label">Möchten Sie uns noch etwas mitteilen? <span class="form-label-opt">(optional)</span></label>
               <textarea id="message" name="message" class="form-textarea" placeholder="Erzählen Sie uns ein bisschen über sich – ganz so, wie es Ihnen passt."></textarea>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="file-upload" class="form-label">Bewerbungsunterlagen hochladen <span class="form-label-opt">(optional)</span></label>
+              <div class="form-upload-area" id="upload-drop-area">
+                <input type="file" id="file-upload" name="file-upload" class="form-upload-input" accept=".pdf,.docx,.doc" multiple>
+                <label for="file-upload" class="form-upload-label">
+                  <span class="form-upload-icon" aria-hidden="true">📎</span>
+                  <span class="form-upload-text">Dateien auswählen oder hierher ziehen</span>
+                  <span class="form-upload-hint">PDF, DOCX — max. 10 MB pro Datei</span>
+                </label>
+                <div class="form-upload-filelist" id="upload-filelist"></div>
+              </div>
             </div>
 
             <div class="form-submit">

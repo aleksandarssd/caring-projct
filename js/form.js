@@ -68,4 +68,88 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // ── File Upload Handling ──
+  const uploadInput = document.getElementById('file-upload');
+  const dropArea = document.getElementById('upload-drop-area');
+  const fileList = document.getElementById('upload-filelist');
+
+  if (uploadInput && dropArea && fileList) {
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
+    const ALLOWED_TYPES = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+    const ALLOWED_EXTENSIONS = ['.pdf', '.doc', '.docx'];
+    let selectedFiles = [];
+
+    function isAllowedFile(file) {
+      const ext = '.' + file.name.split('.').pop().toLowerCase();
+      return ALLOWED_TYPES.includes(file.type) || ALLOWED_EXTENSIONS.includes(ext);
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = '';
+      selectedFiles.forEach((file, index) => {
+        const item = document.createElement('div');
+        item.className = 'form-upload-file';
+        item.innerHTML = `
+          <span class="form-upload-filename" title="${file.name}">\u{1F4C4} ${file.name}</span>
+          <button type="button" class="form-upload-remove" data-index="${index}" aria-label="Datei entfernen">&times;</button>
+        `;
+        fileList.appendChild(item);
+      });
+    }
+
+    function addFiles(files) {
+      for (const file of files) {
+        if (!isAllowedFile(file)) continue;
+        if (file.size > MAX_FILE_SIZE) continue;
+        // Avoid duplicates by name
+        if (selectedFiles.some(f => f.name === file.name && f.size === file.size)) continue;
+        selectedFiles.push(file);
+      }
+      renderFileList();
+    }
+
+    uploadInput.addEventListener('change', () => {
+      addFiles(uploadInput.files);
+      uploadInput.value = ''; // reset so same file can be re-added if removed
+    });
+
+    // Drag & Drop
+    ['dragenter', 'dragover'].forEach(event => {
+      dropArea.addEventListener(event, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.classList.add('drag-over');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(event => {
+      dropArea.addEventListener(event, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.classList.remove('drag-over');
+      });
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+      addFiles(e.dataTransfer.files);
+    });
+
+    // Remove file
+    fileList.addEventListener('click', (e) => {
+      const btn = e.target.closest('.form-upload-remove');
+      if (btn) {
+        const index = parseInt(btn.dataset.index, 10);
+        selectedFiles.splice(index, 1);
+        renderFileList();
+      }
+    });
+
+    // Expose selected files for form submission
+    window.getUploadedFiles = () => selectedFiles;
+  }
 });
