@@ -435,6 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isValid) {
         const submitBtn = form.querySelector('[type="submit"]');
         const originalText = submitBtn?.textContent;
+        const wrapper = form.closest('.form-wrapper');
+        const successMsg = wrapper.querySelector('.form-success');
 
         // Show loading state
         if (submitBtn) {
@@ -447,9 +449,6 @@ document.addEventListener('DOMContentLoaded', () => {
           await sendFormEmail(form, pageType);
 
           // Show success
-          const wrapper = form.closest('.form-wrapper');
-          const successMsg = wrapper.querySelector('.form-success');
-
           form.style.display = 'none';
           if (successMsg) successMsg.classList.add('visible');
 
@@ -485,10 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .join('\n');
           const mailto = `mailto:service@raumimleben-service.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-          // Show fallback success with mailto option
-          const wrapper = form.closest('.form-wrapper');
-          const successMsg = wrapper.querySelector('.form-success');
-
+          // Show fallback error with mailto option
           if (successMsg) {
             successMsg.innerHTML = `
               <div class="form-success-icon">📧</div>
