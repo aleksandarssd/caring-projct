@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "raumimleben-service.de"
+        }
+      ],
+      "destination": "https://www.raumimlebenservice.de/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.raumimleben-service.de"
+        }
+      ],
+      "destination": "https://www.raumimlebenservice.de/$1",
+      "permanent": true
+    }
+  ]
+}
