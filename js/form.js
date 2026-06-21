@@ -9,7 +9,7 @@
  *    - "contact_form" for the contact page
  *    - "job_application" for the jobs page
  *    Both templates should have a single variable: {message_html}
- *    Set the "To Email" to: service@raumimleben-service.de
+ *    Set the "To Email" to: service@raum-im-leben.de
  * 4. Replace the IDs below with your actual EmailJS credentials
  */
 
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .filter(([, v]) => v)
             .map(([k, v]) => `${k}: ${v}`)
             .join('\n');
-          const mailto = `mailto:service@raumimleben-service.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          const mailto = `mailto:service@raum-im-leben.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
           // Show fallback error with mailto option
           if (successMsg) {

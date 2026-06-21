@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /js/
 
-Sitemap: https://www.raumimlebenservice.de/sitemap.xml
+Sitemap: https://www.raumimleben-service.de/sitemap.xml

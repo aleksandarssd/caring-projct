@@ -5,10 +5,10 @@
       "has": [
         {
           "type": "host",
-          "value": "raumimleben-service.de"
+          "value": "raumimlebenservice.de"
         }
       ],
-      "destination": "https://www.raumimlebenservice.de/$1",
+      "destination": "https://www.raumimleben-service.de/$1",
       "permanent": true
     },
     {
@@ -16,10 +16,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.raumimleben-service.de"
+          "value": "www.raumimlebenservice.de"
         }
       ],
-      "destination": "https://www.raumimlebenservice.de/$1",
+      "destination": "https://www.raumimleben-service.de/$1",
       "permanent": true
     }
   ]
