@@ -1,0 +1,10 @@
+{
+  "name": "raum-im-leben",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Raum im Leben Service UG – serverless email API",
+  "dependencies": {
+    "nodemailer": "^6.9.14",
+    "busboy": "^1.6.0"
+  }
+}
