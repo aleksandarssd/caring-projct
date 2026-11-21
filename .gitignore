@@ -17,3 +17,9 @@ Desktop.ini
 *.tmp
 *.bak
 *~
+
+# Dependencies & secrets
+node_modules/
+.env
+.env.local
+

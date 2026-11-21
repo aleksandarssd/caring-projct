@@ -128,3 +128,45 @@ document.addEventListener('DOMContentLoaded', () => {
     declineBtn.addEventListener('click', () => closeModal('declined'));
   }
 });
+
+
+/* ==========================================
+   PROMO VIDEO — click-to-play with sound
+   ========================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('promo-video');
+  const playBtn = document.getElementById('promo-video-play');
+  if (!video || !playBtn) return;
+
+  const frame = video.closest('.video-frame');
+  const label = playBtn.querySelector('.video-play-label');
+
+  const showOverlay = (text) => {
+    frame.classList.remove('is-playing');
+    video.controls = false;
+    if (text) label.innerHTML = text;
+  };
+
+  playBtn.addEventListener('click', () => {
+    frame.classList.add('is-playing');
+    video.controls = true;
+    video.muted = false;
+    const p = video.play();
+    if (p && p.catch) p.catch(() => showOverlay());
+    video.focus({ preventScroll: true });
+  });
+
+  video.addEventListener('ended', () => {
+    video.currentTime = 0.5;
+    showOverlay('Erneut ansehen <small>· 0:30</small>');
+  });
+
+  // Pause automatically when the video scrolls out of view
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && !video.paused) video.pause();
+      });
+    }, { threshold: 0.25 }).observe(video);
+  }
+});

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "Raum im Leben Service UG – serverless email API",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
   "dependencies": {
     "nodemailer": "^6.9.14",
     "busboy": "^1.6.0"
